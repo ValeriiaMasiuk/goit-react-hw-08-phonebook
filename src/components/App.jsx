@@ -23,14 +23,13 @@ export default function App() {
   //   return JSON.parse(localStorage.getItem('contacts')) ?? [];
   // });
   
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(localStorage.getItem('contacts')) ?? [];
+  })
   const [filter, setFilter] = useState('')
 
   useEffect(() => {
-      const contactList = localStorage.getItem('contacts')
-      const parsedContactList = JSON.parse(contactList)
-
-      localStorage.setItem('contacts', JSON.stringify(parsedContactList))
+      localStorage.setItem('contacts', JSON.stringify(contacts))
   }, [contacts])
 
     const addContact = ({ name, number }) => {
