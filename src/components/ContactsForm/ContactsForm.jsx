@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import {FormWrapper, AddForm, AddLabel, AddInput, AddButton} from './ContactsForm.styled'
 
 function ContactsForm({onSubmit})  {
-    const nameInputId = shortid.generate();
-    const numberInputId = shortid.generate()
+    const id = shortid.generate()
 
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
@@ -31,7 +30,7 @@ function ContactsForm({onSubmit})  {
     const handleSubmit = evt => {
         evt.preventDefault()
 
-        const newContact = {name, number}
+        const newContact = {name, number, id}
 
         onSubmit(newContact)
         reset()
@@ -47,7 +46,7 @@ function ContactsForm({onSubmit})  {
                 <AddForm autoComplete="off"
                     onSubmit={handleSubmit}
                 >
-                <AddLabel htmlFor={nameInputId}>
+                <AddLabel >
                 Name
                 <AddInput
                     type="text"
@@ -57,11 +56,10 @@ function ContactsForm({onSubmit})  {
                     required
                     onChange={handleChange}
                     value={name}
-                    id={nameInputId}
                 />
                 </AddLabel>
                     
-                <AddLabel htmlFor={numberInputId}>
+                <AddLabel >
                 Number
                 <AddInput
                     type="tel"
@@ -71,7 +69,6 @@ function ContactsForm({onSubmit})  {
                     required
                     onChange={handleChange}
                     value={number}
-                    id={numberInputId}
                 />
                 </AddLabel>
                 <AddButton type="submit">Add Contact</AddButton>
