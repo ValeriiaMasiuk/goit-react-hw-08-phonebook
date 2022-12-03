@@ -1,25 +1,24 @@
 import { useState } from "react";
 import shortid from "shortid";
 import PropTypes from 'prop-types';
-import { addsContact } from "redux/contacts/contactSlice";
+import { addContact } from "redux/operations/operations";
 import { useDispatch, useSelector } from "react-redux";
-import {FormWrapper, AddForm, AddLabel, AddInput, AddButton} from './ContactsForm.styled'
+import { FormWrapper, AddForm, AddLabel, AddInput, AddButton } from './ContactsForm.styled';
 
-function ContactsForm()  {
-    const id = shortid.generate()
+function ContactsForm() {  
+    const [name, setName] = useState('')
+    const [number, setNumber] = useState('')
+
+    const id = shortid.generate();
+    const contacts = useSelector(state => state.contacts.items);
 
     const dispatch = useDispatch();
 
-    const contacts = useSelector(state => state.contacts);
-
-  const addContact = data => {
-    contacts.find(contact => contact.name === data.name)
+  const addsContact = data => {
+    contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())
       ? alert(`${data.name} is already in contacts.`)
-      : dispatch(addsContact(data))         
+      : dispatch(addContact(data))         
     }
-
-    const [name, setName] = useState('')
-    const [number, setNumber] = useState('')
 
     const handleChange = evt => {
         const { name, value } = evt.target
@@ -43,7 +42,7 @@ function ContactsForm()  {
 
         const newContact = { name, number, id }
 
-        addContact(newContact)
+        addsContact(newContact)
         reset()
     }
     

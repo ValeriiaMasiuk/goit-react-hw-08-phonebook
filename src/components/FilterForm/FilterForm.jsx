@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/filter/filterSlice';
-import { FilterWrapper, FilterLabel, FilterInput } from './FilterForm.styled'
+import { FilterWrapper, FilterLabel, FilterInput } from './FilterForm.styled';
 
 const FilterForm = () => {
   const dispatch = useDispatch();
