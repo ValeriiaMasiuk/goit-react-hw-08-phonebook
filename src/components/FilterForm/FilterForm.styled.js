@@ -1,29 +1,28 @@
 import styled from "@emotion/styled";
 
 export const FilterWrapper = styled.div`
-    border: 1px solid darkblue;
     margin-bottom: 40px;
-    margin-left: 20px;
+    min-width: 320px;
     padding: 16px;
-    max-width: 320px;
 `
 
 export const FilterLabel = styled.label`
     display: flex;
     flex-direction: column;
-    font-size: 24px;
+    font-size: 20px;
     color: darkblue;
 `
 
 export const FilterInput = styled.input`
-    font-size: 20px;
+    font-size: 16px;
     padding: 8px;
-    margin-top: 4px;
+    margin-top: 8px;
     outline: none;
     border: 1px solid darkblue;
     color: darkblue;
+    border-radius: 4px;
 
     &:focus {
-        border: 1px solid blue;
+        border: 1px solid #b3dcfd;
     }
 `

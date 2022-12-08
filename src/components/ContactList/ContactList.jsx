@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { ContactsList, ContactItem, DeleteButton, ContactName, ContactNumber } from './ContactList.styled';
+import { ContactsList, ContactDetails, ContactItem, DeleteButton } from './ContactList.styled';
 import { deleteContact } from 'redux/operations/operations';
+import { AiOutlineCheck } from "react-icons/ai"
+// import {MdDeleteForever} from "react-icons/md";
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -27,9 +29,11 @@ const ContactList = () => {
         <ContactsList>
         {getFilteredContacts().map(({ id, name, number }) => (
           <ContactItem key={id}>
-                    <ContactName>{name}</ContactName>
-            <ContactNumber>{number}</ContactNumber>
-                    <DeleteButton id={id} onClick={removeContact}>Delete contact</DeleteButton>
+            <ContactDetails><AiOutlineCheck/> {name}: {number}</ContactDetails>
+            
+            <DeleteButton id={id} onClick={removeContact}>
+                Delete             
+            </DeleteButton>
                 </ContactItem>
         )                
             )}

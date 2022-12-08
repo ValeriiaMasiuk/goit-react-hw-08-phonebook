@@ -1,31 +1,16 @@
 import styled from "@emotion/styled";
 
-export const FormWrapper = styled.div`
-align-items: center;
-    min-width: 350px;
-`
-
-export const AddForm = styled.form`
-    padding: 16px;
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
+    align-items: center;
 `
 
-export const AddLabel = styled.label`
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    color: darkblue;
-    
-    &:not(:last-child) {
-        margin-bottom: 20px;
-    }
-`
-
-export const AddInput = styled.input`
+export const LoginInput = styled.input`
     font-size: 16px;
-    margin-top: 8px;
+    width: 320px;
     padding: 8px;
+    margin-top: 4px;
     outline: none;
     border: 1px solid darkblue;
     color: darkblue;
@@ -36,11 +21,22 @@ export const AddInput = styled.input`
     }
 `
 
-export const AddButton = styled.button`
+export const LoginLabel = styled.label`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 20px;
+    color: darkblue;
+       
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+`
+
+export const LoginButton = styled.button`
     display: inline-block;
     font-size: 16px;
-    max-width: 150px;
-    margin-left: 81px;
+    min-width: 150px;
     padding: 8px;
     cursor: pointer;
     color: white;

@@ -2,18 +2,15 @@ import styled from "@emotion/styled";
 
 export const ContactsList = styled.ul`
     margin-top: 0;
-    margin-left: 20px;
     padding-left: 0;
 `
 
 export const ContactItem = styled.li`
     font-size: 24px;
-    list-style: square;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 500px;
-    border: 1px solid darkblue;
     padding: 8px;
 
     &:not(:last-child) {
@@ -21,13 +18,7 @@ export const ContactItem = styled.li`
     }
 `
 
-export const ContactName = styled.p`
-    font-size: 20px;
-    margin: 0;
-    color: darkblue;
-`
-
-export const ContactNumber = styled.p`
+export const ContactDetails = styled.span`
     font-size: 20px;
     margin: 0;
     color: darkblue;
@@ -35,19 +26,18 @@ export const ContactNumber = styled.p`
 
 export const DeleteButton = styled.button`
     display: inline-block;
-    font-size: 16px;
-    min-width: 150px;
-    min-height: 40px;
+    font-size: 12px;
     padding: 4px;
+    border-radius: 4px;
+    min-width: 50px;
     cursor: pointer;
     color: white;
     background-color: darkblue;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
-    border-radius: 4px;
-    border: 1px solid rgba(0,0,0,0);
+    border: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-            background-color: blue;
+        background-color: #b3dcfd;
+        color: darkblue;
     }
 `
